@@ -4,22 +4,21 @@
   "version": "1.0",
   "permissions": ["storage", "activeTab", "scripting", "background"],
   "action": {
+    "default_popup": "public/sidebar.html", 
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    },
-    "default_popup": "sidebar.html" 
+      "16": "public/icons/icon16.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
+    }
   },
   "host_permissions": ["http://localhost:1234/*"],
   "background": {
-    "service_worker": "js/background.js"  
+    "service_worker": "src/js/background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["js/sidebar.js"]
+      "js": ["src/js/sidebar.js"]
     }
   ]
 }
-  
